@@ -1,4 +1,5 @@
 import csv
+import unittest
 from collections import defaultdict
 def write_data_to_csv(data, filename):
     with open(filename, "w", newline='') as file:
@@ -53,6 +54,19 @@ for company, revenue in revenue_by_company.items():
 print("\nRevenue by Year:")
 for year, revenue in revenue_by_year.items():
     print(f"{year}: {revenue}")
+class Testing(unittest.TestCase):
+    def test_string(self):
+        self.assertEqual(revenue_by_company["eka"],473000)
+        self.assertEqual(revenue_by_company["dvi"],374700)
+        self.assertEqual(revenue_by_company["tri"],158500)
+        self.assertEqual(revenue_by_company["chatur"],76000)
+        self.assertEqual(revenue_by_year["2015"],274000)
+        self.assertEqual(revenue_by_year["2016"],185500)
+        self.assertEqual(revenue_by_year["2018"],82000)
+        self.assertEqual(revenue_by_year["2017"],190000)
+        self.assertEqual(revenue_by_year["2019"],350700)
+    if __name__=='__main__':
+        unittest.main()
    
    
          
